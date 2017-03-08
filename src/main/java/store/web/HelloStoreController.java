@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 @RequestMapping("/")
-public class HelloStore {
+public class HelloStoreController {
 
     @RequestMapping(method = RequestMethod.GET)
     public String helloWorld(Model model) {

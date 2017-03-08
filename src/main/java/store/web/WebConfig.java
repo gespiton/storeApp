@@ -11,7 +11,8 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 /**
- * Created by sher on 8/3/2017.
+ * Created by 周鸿清 on 8/3/2017.
+ * create application context
  */
 
 @Configuration

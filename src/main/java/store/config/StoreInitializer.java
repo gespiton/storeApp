@@ -4,7 +4,8 @@ import store.web.WebConfig;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 /**
- * Created by sher on 8/3/2017.
+ * Created by 周鸿清 on 8/3/2017.
+ *  equals to web.xml, create application context
  */
 public class StoreInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
 

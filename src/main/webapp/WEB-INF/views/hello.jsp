@@ -11,6 +11,6 @@
     <title>Hello World</title>
 </head>
 <body>
-<h2>fuck awesome</h2>
+<h2>Congratulation, you get me!</h2>
 </body>
 </html>
