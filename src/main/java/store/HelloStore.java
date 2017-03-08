@@ -1,4 +1,4 @@
-package Application;
+package store;
 
 /**
  * Created by sher on 28/2/2017.
