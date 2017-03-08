@@ -33,6 +33,7 @@ public class WebConfig extends WebMvcConfigurerAdapter {
         configurer.enable();
     }
 
+    // static content handling
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
     }

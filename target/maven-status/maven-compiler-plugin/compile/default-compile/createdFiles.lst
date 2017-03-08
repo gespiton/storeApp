@@ -1,6 +1,5 @@
 store/config/StoreInitializer.class
+store/web/HelloStoreController.class
 store/config/RootConfig.class
-store/web/HelloStore.class
-store/config/DataConfig.class
 store/web/WebConfig.class
 store/config/RootConfig$WebPackage.class

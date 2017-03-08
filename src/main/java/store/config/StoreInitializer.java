@@ -7,6 +7,7 @@ import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatche
  * Created by 周鸿清 on 8/3/2017.
  *  equals to web.xml, create application context
  */
+
 public class StoreInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
 
     protected Class<?>[] getRootConfigClasses() {
