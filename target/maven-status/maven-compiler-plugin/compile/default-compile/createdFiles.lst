@@ -1,5 +1,7 @@
 store/config/StoreInitializer.class
 store/web/HelloStoreController.class
+store/business/impl/WeixinConnect.class
 store/config/RootConfig.class
+store/web/WeixinConnectorController.class
 store/web/WebConfig.class
 store/config/RootConfig$WebPackage.class

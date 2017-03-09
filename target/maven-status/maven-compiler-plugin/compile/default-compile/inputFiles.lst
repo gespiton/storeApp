@@ -1,4 +1,6 @@
 /Users/sher/Documents/workspace/storeApp/src/main/java/store/web/WebConfig.java
+/Users/sher/Documents/workspace/storeApp/src/main/java/store/web/WeixinConnectorController.java
 /Users/sher/Documents/workspace/storeApp/src/main/java/store/web/HelloStoreController.java
+/Users/sher/Documents/workspace/storeApp/src/main/java/store/business/impl/WeixinConnect.java
 /Users/sher/Documents/workspace/storeApp/src/main/java/store/config/StoreInitializer.java
 /Users/sher/Documents/workspace/storeApp/src/main/java/store/config/RootConfig.java
