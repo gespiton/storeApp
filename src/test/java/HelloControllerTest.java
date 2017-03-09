@@ -16,6 +16,4 @@ public class HelloControllerTest {
         MockMvc mockMvc = standaloneSetup(controller).build();
         mockMvc.perform(get("/")).andExpect(view().name("hello"));
     }
-
-
 }
