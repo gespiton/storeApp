@@ -1,6 +1,14 @@
-#setup maven
+**目录**
 
-##install
+*  setup Project
+*  deploy project
+
+
+
+
+#setup Project
+
+##install maven
 * check the official [site](https://maven.apache.org/install.html)
 	* download the package, put it the place you like, extract it
 	* add the **the dir contain mvn** to $PATH
@@ -18,23 +26,6 @@
 	* congratulation, you success
 
 ##import to IDE
-
-* **project file is under src directory**
-* if you wanna install dependency through command line, cd to your project dir, run **mvn install**, if you see BUILD SUCCESS
-
-```
-[INFO] shop-business ...................................... SUCCESS [  1.482 s]
-[INFO] ------------------------------------------------------------------------
-[INFO] BUILD SUCCESS
-[INFO] ------------------------------------------------------------------------
-[INFO] Total time: 1.768 s
-[INFO] Finished at: 2017-02-25T01:38:04+08:00
-[INFO] Final Memory: 19M/305M
-[INFO] ------------------------------------------------------------------------
-```
-you installed the dependencies successfully
-
-* otherwise, you can ask IDE to do the job for you
 
 * ###Intellij
   import project -> open your dir contain pom.xml -> 
@@ -63,6 +54,16 @@ you installed the dependencies successfully
   
   ok, that's it
   
-  here is a [Youtube Tutorial](https://www.youtube.com/watch?v=0CFWeVgzsqY)
+  here is a [Youtube Tutorial](https://www.youtube.com/watch?v=0CFWeVgzsqY) about maven
+  
+---
+  
+#deploy project
+* 在项目目录运行 mvn clean install，会在 target 文件夹下生成 war 文件
+* 浏览器输入 gespiton/manager
+* user： sher     password: freedom
+* 在下面找到 chosefile 选项，上传war文件，查看上面的app列表，看到上传的文件，则成功发布
+* 浏览器输入 gespiton.cn/war文件名
+
   
   
