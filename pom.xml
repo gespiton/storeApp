@@ -64,9 +64,9 @@
 
         <!--mongo database, uncomment if you chose to use-->
         <!--<dependency>-->
-            <!--<groupId>org.mongodb</groupId>-->
-            <!--<artifactId>mongodb-driver</artifactId>-->
-            <!--<version>3.4.2</version>-->
+        <!--<groupId>org.mongodb</groupId>-->
+        <!--<artifactId>mongodb-driver</artifactId>-->
+        <!--<version>3.4.2</version>-->
         <!--</dependency>-->
 
 
@@ -83,6 +83,22 @@
                     <!--keep from failing for java based configuration-->
                     <failOnMissingWebXml>false</failOnMissingWebXml>
                 </configuration>
+            </plugin>
+            <plugin>
+
+                <groupId>org.apache.tomcat.maven</groupId>
+
+                <artifactId>tomcat7-maven-plugin</artifactId>
+
+                <version>2.2</version>
+                <configuration>
+                    <url>http://gespiton.cn/manager/text</url>
+                    <!--<username>sher</username>-->
+                    <!--<password>freedom</password>-->
+                    <update>true</update>
+                    <!--<path>/webapps</path>-->
+                </configuration>
+
             </plugin>
         </plugins>
     </build>
