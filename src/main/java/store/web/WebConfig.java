@@ -36,5 +36,8 @@ public class WebConfig extends WebMvcConfigurerAdapter {
     // static content handling
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
+        // map resource to public folder
+        registry.addResourceHandler("/public/**")
+                .addResourceLocations("/WEB-INF/public/");
     }
 }
