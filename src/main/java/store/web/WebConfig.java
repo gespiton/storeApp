@@ -9,6 +9,10 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
+import org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer;
+import org.springframework.web.servlet.view.freemarker.FreeMarkerView;
+import org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver;
+import org.springframework.web.servlet.view.velocity.VelocityLayoutViewResolver;
 
 /**
  * Created by 周鸿清 on 8/3/2017.
@@ -22,10 +26,18 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 public class WebConfig extends WebMvcConfigurerAdapter {
     @Bean
     public ViewResolver viewResolver() {
-        InternalResourceViewResolver resolver = new InternalResourceViewResolver();
-        resolver.setPrefix("/WEB-INF/views/");
-        resolver.setSuffix(".jsp");
+        FreeMarkerViewResolver resolver = new FreeMarkerViewResolver();
+        resolver.setCache(true);
+        resolver.setPrefix("");
+        resolver.setSuffix(".ftl");
         return resolver;
+    }
+
+    @Bean
+    public FreeMarkerConfigurer freemarkerConfig() {
+        FreeMarkerConfigurer freeMarkerConfigurer = new FreeMarkerConfigurer();
+        freeMarkerConfigurer.setTemplateLoaderPath("/WEB-INF/views/ftl/");
+        return freeMarkerConfigurer;
     }
 
     @Override
@@ -40,4 +52,6 @@ public class WebConfig extends WebMvcConfigurerAdapter {
         registry.addResourceHandler("/public/**")
                 .addResourceLocations("/WEB-INF/public/");
     }
+
+
 }

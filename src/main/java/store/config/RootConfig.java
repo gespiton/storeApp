@@ -18,11 +18,10 @@ import java.util.regex.Pattern;
                 @ComponentScan.Filter(type = FilterType.CUSTOM, value = RootConfig.WebPackage.class)
         })
 
-
 public class RootConfig {
     public static class WebPackage extends RegexPatternTypeFilter {
         public WebPackage() {
-            super(Pattern.compile("store\\.web"));
+            super(Pattern.compile("store\\.business\\.*"));
         }
     }
 }

@@ -1,6 +1,6 @@
 import org.junit.*;
 import org.springframework.test.web.servlet.MockMvc;
-import store.web.HelloStoreController;
+import store.web.controllers.HelloStoreController;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
