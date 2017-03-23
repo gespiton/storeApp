@@ -1,6 +1,7 @@
-<head>
-    <link rel="stylesheet" href="/public/css/main.css">
-</head>
+<#assign tiles=JspTaglibs["http://tiles.apache.org/tags-tiles"]>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
 <div id="header">
     <h2>car factory</h2>
 </div>

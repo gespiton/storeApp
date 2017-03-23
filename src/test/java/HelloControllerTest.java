@@ -14,6 +14,6 @@ public class HelloControllerTest {
     public void testHelloPage() throws Exception {
         HelloStoreController controller = new HelloStoreController();
         MockMvc mockMvc = standaloneSetup(controller).build();
-        mockMvc.perform(get("/")).andExpect(view().name("hello"));
+        mockMvc.perform(get("/")).andExpect(view().name("redirect:/cars"));
     }
 }

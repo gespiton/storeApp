@@ -79,6 +79,57 @@
             <artifactId>spring-context-support</artifactId>
             <version>${springVersion}</version>
         </dependency>
+
+        <!--this for tiles integration-->
+        <dependency>
+            <groupId>org.apache.tiles</groupId>
+            <artifactId>tiles-freemarker</artifactId>
+            <version>3.0.7</version>
+            <exclusions>
+                <exclusion>  <!-- declare the exclusion -->
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-api</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.tiles/tiles-template -->
+        <dependency>
+            <groupId>org.apache.tiles</groupId>
+            <artifactId>tiles-template</artifactId>
+            <version>3.0.7</version>
+            <exclusions>
+                <exclusion>  <!-- declare the exclusion -->
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-api</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.tiles/tiles-extras -->
+        <dependency>
+            <groupId>org.apache.tiles</groupId>
+            <artifactId>tiles-extras</artifactId>
+            <version>3.0.7</version>
+            <exclusions>
+                <exclusion>  <!-- declare the exclusion -->
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-api</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <!--<dependency>-->
+        <!--<groupId>org.apache.tiles</groupId>-->
+        <!--<artifactId>tiles-jsp</artifactId>-->
+        <!--<version>3.0.7</version>-->
+        <!--<exclusions>-->
+        <!--<exclusion>  &lt;!&ndash; declare the exclusion &ndash;&gt;-->
+        <!--<groupId>org.slf4j</groupId>-->
+        <!--<artifactId>slf4j-api</artifactId>-->
+        <!--</exclusion>-->
+        <!--</exclusions>-->
+        <!--</dependency>-->
+
+
         <!--mongo database, uncomment if you chose to use-->
         <!--<dependency>-->
         <!--<groupId>org.mongodb</groupId>-->
