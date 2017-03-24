@@ -1,19 +1,15 @@
-// author: 周鸿清
 package store.web;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.*;
-import org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer;
-import org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver;
 import org.springframework.web.servlet.view.tiles3.TilesConfigurer;
 import org.springframework.web.servlet.view.tiles3.TilesViewResolver;
 
 /**
  * Created by 周鸿清 on 8/3/2017.
- * create application context
+ *
  */
 
 @Configuration
@@ -39,21 +35,24 @@ public class WebConfig extends WebMvcConfigurerAdapter {
         registry.viewResolver(viewResolver);
     }
 
-    @Bean
-    public ViewResolver viewResolver() {
-        FreeMarkerViewResolver resolver = new FreeMarkerViewResolver();
-        resolver.setCache(true);
-        resolver.setPrefix("");
-        resolver.setSuffix(".ftl");
-        return resolver;
-    }
+    // after cofigure tiles, configure for freemarker no longer needed
+//    // freemarker viewResolver
+//    @Bean
+//    public ViewResolver viewResolver() {
+//        FreeMarkerViewResolver resolver = new FreeMarkerViewResolver();
+//        resolver.setCache(true);
+//        resolver.setPrefix("");
+//        resolver.setSuffix(".ftl");
+//        return resolver;
+//    }
 
-    @Bean
-    public FreeMarkerConfigurer freemarkerConfig() {
-        FreeMarkerConfigurer freeMarkerConfigurer = new FreeMarkerConfigurer();
-        freeMarkerConfigurer.setTemplateLoaderPath("/WEB-INF/views/ftl/");
-        return freeMarkerConfigurer;
-    }
+//    @Bean
+//    public FreeMarkerConfigurer freemarkerConfig() {
+//        FreeMarkerConfigurer freeMarkerConfigurer = new FreeMarkerConfigurer();
+//        freeMarkerConfigurer.setTemplateLoaderPath("/WEB-INF/views/ftl/");
+//        return freeMarkerConfigurer;
+//    }
+
 
     @Override
     public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
