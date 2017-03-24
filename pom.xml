@@ -54,13 +54,12 @@
             <version>4.12</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.springframework/spring-test -->
-        <!-- https://mvnrepository.com/artifact/org.springframework/spring-test -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-test</artifactId>
             <version>${springVersion}</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.hamcrest/hamcrest-junit -->
+        <!--junit 测试需要-->
         <dependency>
             <groupId>org.hamcrest</groupId>
             <artifactId>hamcrest-junit</artifactId>
@@ -69,18 +68,18 @@
 
         <!--next two for freemarker( seems not needed after add tiles )-->
         <!--<dependency>-->
-            <!--<groupId>org.freemarker</groupId>-->
-            <!--<artifactId>freemarker</artifactId>-->
-            <!--<version>2.3.23</version>-->
+        <!--<groupId>org.freemarker</groupId>-->
+        <!--<artifactId>freemarker</artifactId>-->
+        <!--<version>2.3.23</version>-->
         <!--</dependency>-->
 
         <!--<dependency>-->
-            <!--<groupId>org.springframework</groupId>-->
-            <!--<artifactId>spring-context-support</artifactId>-->
-            <!--<version>${springVersion}</version>-->
+        <!--<groupId>org.springframework</groupId>-->
+        <!--<artifactId>spring-context-support</artifactId>-->
+        <!--<version>${springVersion}</version>-->
         <!--</dependency>-->
 
-        <!--these for tiles integration-->
+        <!--these for tiles and freemarker integration-->
         <dependency>
             <groupId>org.apache.tiles</groupId>
             <artifactId>tiles-freemarker</artifactId>
@@ -132,20 +131,19 @@
 
     <build>
         <plugins>
+            <!--keep from failing for java based configuration-->
             <plugin>
                 <artifactId>maven-war-plugin</artifactId>
                 <version>2.6</version>
                 <configuration>
-                    <!--keep from failing for java based configuration-->
                     <failOnMissingWebXml>false</failOnMissingWebXml>
                 </configuration>
             </plugin>
+
+            <!--一键发布到服务器-->
             <plugin>
-
                 <groupId>org.apache.tomcat.maven</groupId>
-
                 <artifactId>tomcat7-maven-plugin</artifactId>
-
                 <version>2.2</version>
                 <configuration>
                     <url>http://gespiton.cn/manager/text</url>
@@ -154,14 +152,15 @@
                     <update>true</update>
                     <!--<path>/webapps</path>-->
                 </configuration>
-
             </plugin>
+
+            <!--指定 jdk 版本-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
-                    <source>1.7</source>
-                    <target>1.7</target>
+                    <source>1.8</source>
+                    <target>1.8</target>
                 </configuration>
             </plugin>
         </plugins>
