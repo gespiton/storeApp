@@ -7,7 +7,7 @@
     <title>
     <@tiles.getAsString name="title"/>
     </title>
-    <link href="/storeApp/public/css/main.css" rel="stylesheet"/>
+    <link href="/storeApp/resources/css/main.css" rel="stylesheet"/>
 </head>
 
 <body>

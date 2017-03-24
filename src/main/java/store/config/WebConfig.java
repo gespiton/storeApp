@@ -1,4 +1,4 @@
-package store.web;
+package store.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -9,7 +9,6 @@ import org.springframework.web.servlet.view.tiles3.TilesViewResolver;
 
 /**
  * Created by 周鸿清 on 8/3/2017.
- *
  */
 
 @Configuration
@@ -22,7 +21,7 @@ public class WebConfig extends WebMvcConfigurerAdapter {
     @Bean
     public TilesConfigurer tilesConfigurer() {
         TilesConfigurer tilesConfigurer = new TilesConfigurer();
-        tilesConfigurer.setDefinitions("/WEB-INF/views/tiles/tiles.xml");
+        tilesConfigurer.setDefinitions("/WEB-INF/views/tiles.xml");
         tilesConfigurer.setCheckRefresh(true);
         tilesConfigurer.setTilesInitializer(new SpringCompleteAutoloadTilesInitializer());
         return tilesConfigurer;
@@ -35,23 +34,6 @@ public class WebConfig extends WebMvcConfigurerAdapter {
         registry.viewResolver(viewResolver);
     }
 
-    // after cofigure tiles, configure for freemarker no longer needed
-//    // freemarker viewResolver
-//    @Bean
-//    public ViewResolver viewResolver() {
-//        FreeMarkerViewResolver resolver = new FreeMarkerViewResolver();
-//        resolver.setCache(true);
-//        resolver.setPrefix("");
-//        resolver.setSuffix(".ftl");
-//        return resolver;
-//    }
-
-//    @Bean
-//    public FreeMarkerConfigurer freemarkerConfig() {
-//        FreeMarkerConfigurer freeMarkerConfigurer = new FreeMarkerConfigurer();
-//        freeMarkerConfigurer.setTemplateLoaderPath("/WEB-INF/views/ftl/");
-//        return freeMarkerConfigurer;
-//    }
 
 
     @Override
@@ -64,9 +46,7 @@ public class WebConfig extends WebMvcConfigurerAdapter {
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         // map resource to public folder
         // fuck, there got to be a / at the end
-        registry.addResourceHandler("/public/**")
-                .addResourceLocations("/WEB-INF/public/");
+        registry.addResourceHandler("/resources/**")
+                .addResourceLocations("/resources/");
     }
-
-
 }

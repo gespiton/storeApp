@@ -1,5 +1,5 @@
 // author: 周鸿清
-package store.web;
+package store.config;
 import org.apache.tiles.TilesContainer;
 import org.apache.tiles.evaluator.AttributeEvaluatorFactory;
 import org.apache.tiles.extras.complete.CompleteAutoloadTilesContainerFactory;

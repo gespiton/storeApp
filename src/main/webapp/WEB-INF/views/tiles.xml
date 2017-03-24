@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC  "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<!--// author: 周鸿清-->
+
+<tiles-definitions>
+    <!-- Template Definition -->
+    <definition name="hello" template="/WEB-INF/views/layouts/defaultLayout.ftl" templateType="freemarker">
+        <put-attribute name="title" value="hello" />
+        <put-attribute name="header" value="/WEB-INF/views/templates/header.ftl" type="freemarker"/>
+        <put-attribute name="body" value="/WEB-INF/views/templates/hello.ftl" type="freemarker"/>
+    </definition>
+
+</tiles-definitions>

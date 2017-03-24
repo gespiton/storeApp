@@ -1,5 +1,5 @@
 
-package store.web;
+package store.config;
 
 /*
  * Copyright 2014 Bright Interactive, All Rights Reserved.

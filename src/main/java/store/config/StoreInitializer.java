@@ -1,6 +1,5 @@
 package store.config;
 
-import store.web.WebConfig;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 /**
