@@ -3,8 +3,7 @@ package store.business.services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import store.business.DAOs.IItemDao;
-import store.business.DAOs.ItemDaoImpl;
+import store.business.mappers.ItemMapper;
 import store.business.models.Item;
 
 
@@ -14,15 +13,17 @@ import store.business.models.Item;
 @Service
 @Transactional(readOnly = true)
 public class ItemService {
-    @Autowired
-    ItemDaoImpl itemDao;
+
 
     public Item getItem(long id) {
-        return itemDao.findById(id);
+        return itemMapper.getItemById(id);
     }
+//
+//    @Transactional(readOnly = false)
+//    public void addNewItem(Item item) {
+//        itemDao.save(item);
+//    }
 
-    @Transactional(readOnly = false)
-    public void addNewItem(Item item) {
-        itemDao.save(item);
-    }
+    @Autowired
+    private ItemMapper itemMapper;
 }

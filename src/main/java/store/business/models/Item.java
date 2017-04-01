@@ -8,8 +8,7 @@ import java.util.Iterator;
 /**
  * Created by sher on 31/3/2017.
  */
-@Entity
-@Table(name = "items")
+
 public class Item implements Serializable {
 
     public static final long serialVersionUID = 131420;
@@ -40,9 +39,6 @@ public class Item implements Serializable {
         this.id = id;
     }
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", unique = true, nullable = false)
     public Long getId() {
         return this.id;
     }
@@ -51,7 +47,6 @@ public class Item implements Serializable {
         this.id = id;
     }
 
-    @Column(name = "itemName", length = 100)
     public String getName() {
         return this.name;
     }

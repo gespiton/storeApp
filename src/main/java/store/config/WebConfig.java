@@ -14,6 +14,7 @@ import org.springframework.web.servlet.view.tiles3.TilesViewResolver;
 @Configuration
 @EnableWebMvc
 @ComponentScan("store.web")
+
 // remember to set the web source directory in project setting
 public class WebConfig extends WebMvcConfigurerAdapter {
 

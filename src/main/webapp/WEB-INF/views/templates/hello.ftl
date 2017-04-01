@@ -20,10 +20,10 @@
             <th>Make</th>
             <th>Model</th>
         </tr>
-    <#list model["carList"] as car>
+    <#list model["carList"] as Item>
         <tr>
-            <td>${car.make}</td>
-            <td>${car.model}</td>
+            <td>${Item.id}</td>
+            <td>${Item.name}</td>
         </tr>
     </#list>
     </table>

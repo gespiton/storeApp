@@ -3,15 +3,18 @@ package store.web.controllers;
  * Created by 周鸿清 on 28/2/2017.
  */
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import store.business.models.Car;
+import store.business.models.Item;
+import store.business.services.ItemService;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
 
@@ -20,6 +23,8 @@ import java.util.Locale;
 @Controller
 public class HelloStoreController {
     private static List<Car> carList = new ArrayList<>();
+    @Autowired
+    ItemService itemService;
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String home(Locale locale, Model model) {
@@ -34,7 +39,10 @@ public class HelloStoreController {
 
     @RequestMapping(value = "/cars", method = RequestMethod.GET)
     public String init(@ModelAttribute("model") ModelMap model) {
-        model.addAttribute("carList", carList);
+        Item i = itemService.getItem(11);
+        System.out.println(i.getName());
+        model.addAttribute("carList", Arrays.asList(i));
+
         return "hello";
     }
 
