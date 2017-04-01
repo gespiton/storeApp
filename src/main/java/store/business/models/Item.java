@@ -1,9 +1,6 @@
 package store.business.models;
 
-import javax.persistence.*;
 import java.io.Serializable;
-import java.util.Date;
-import java.util.Iterator;
 
 /**
  * Created by sher on 31/3/2017.
