@@ -1,0 +1,22 @@
+CREATE TABLE items (
+  id                 BIGINT PRIMARY KEY,
+  name               VARCHAR(40) NOT NULL,
+  serialCode         BIGINT      NOT NULL,
+  weight             DOUBLE,
+  stockNumber        INT,
+  preSaleNumber      INT,
+  shop               VARCHAR(40),
+  itroducedUserPrice DOUBLE,
+  marketPrice        DOUBLE,
+  bankPrice          DOUBLE,
+  exchangeCredit     INT,
+  categoryName       VARCHAR(40),
+  brandName          VARCHAR(40),
+  onMarketTime       VARCHAR(20),
+  outMarketTime      VARCHAR(20),
+  addedTime          VARCHAR(20),
+  lastModifiedTime   VARCHAR(20),
+  description        VARCHAR(400),
+  imagePath          VARCHAR(40),
+  isDividable        BOOL
+);

@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 @ComponentScan(basePackages = {"store.business","store.config"})
-//@PropertySource(value = {"classpath:hibernate.properties"})
+//@PropertySource(value = {"classpath:database.properties"})
 public class RootConfig {
 
 }

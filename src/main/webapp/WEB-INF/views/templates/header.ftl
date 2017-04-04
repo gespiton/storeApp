@@ -1,3 +1,4 @@
+<#ftl encoding="utf-8">
 <#assign tiles=JspTaglibs["http://tiles.apache.org/tags-tiles"]>
 
 <header>

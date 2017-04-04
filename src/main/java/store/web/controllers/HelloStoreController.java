@@ -11,11 +11,9 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import store.business.models.Item;
+import store.business.services.CategoryService;
 import store.business.services.ItemService;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 import java.util.Locale;
 
 //import org.springframework.web.portlet.ModelAndView;
@@ -25,19 +23,25 @@ public class HelloStoreController {
     @Autowired
     ItemService itemService;
 
-    @RequestMapping(value = "/", method = RequestMethod.GET)
+    @Autowired
+    CategoryService categoryService;
+
+    @RequestMapping(value = "/", method = RequestMethod.GET, produces = "text/html;charset=UTF-8")
     public String home(Locale locale, Model model) {
-        return "redirect:/cars";
+        return "redirect:/items";
     }
 
-    @RequestMapping(value = "/cars", method = RequestMethod.GET)
+    @RequestMapping(value = "/items", method = RequestMethod.GET, produces = "text/html;charset=UTF-8")
     public String init(@ModelAttribute("model") ModelMap model) {
-        Item i = itemService.getItem(11);
-        System.out.println(i.getName());
-        model.addAttribute("carList", Arrays.asList(i));
-
+        model.addAttribute("carList", itemService.getAll());
+        System.out.println(categoryService.getNameById((long) 1));
         return "hello";
     }
 
-//    @RequestMapping(value = "/add", method = RequestMethod.POST)
+    @RequestMapping(value = "/add", method = RequestMethod.POST, produces = "text/html;charset=UTF-8")
+    public String addItem(@ModelAttribute("Item") Item item) {
+        System.out.println(item == null);
+        itemService.addItem(item);
+        return "redirect:/items";
+    }
 }

@@ -8,7 +8,7 @@
     <definition name="hello" template="/WEB-INF/views/layouts/defaultLayout.ftl" templateType="freemarker">
         <put-attribute name="title" value="hello" />
         <put-attribute name="header" value="/WEB-INF/views/templates/header.ftl" type="freemarker"/>
-        <put-attribute name="body" value="/WEB-INF/views/templates/hello.ftl" type="freemarker"/>
+        <put-attribute name="body" value="/WEB-INF/views/templates/addItem.ftl" type="freemarker"/>
     </definition>
 
 </tiles-definitions>
