@@ -18,7 +18,7 @@ import java.util.List;
 public class ItemService {
 
 
-//    public Item getItem(long id) {
+    //    public Item getItem(long id) {
 //        return itemMapper.getItemById(id);
 //    }
 //
@@ -26,6 +26,8 @@ public class ItemService {
 //    public void addNewItem(Item item) {
 //        itemDao.save(item);
 //    }
+    @Autowired
+    private ItemMapper itemMapper;
 
     public Item getItemById(@Param("id") long id) {
         return itemMapper.getItemById(id);
@@ -41,6 +43,5 @@ public class ItemService {
         return b;
     }
 
-    @Autowired
-    private ItemMapper itemMapper;
+
 }

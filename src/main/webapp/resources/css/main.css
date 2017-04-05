@@ -6281,17 +6281,33 @@ hr {
 #addItemPage {
   width: 80%;
   margin: 0 10% 0 10%; }
+  #addItemPage form .dropdown-submenu {
+    position: relative; }
+  #addItemPage form .dropdown-submenu .dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top: -1px; }
   #addItemPage form #flexWrap {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap; }
     #addItemPage form #flexWrap .form-group {
-      width: 40%;
+      width: 45%;
       margin: 10px 15px; }
-  #addItemPage form button {
+      #addItemPage form #flexWrap .form-group .categoryTag {
+        display: block; }
+      #addItemPage form #flexWrap .form-group #category {
+        font-weight: bold; }
+        #addItemPage form #flexWrap .form-group #category button.categoryBtn {
+          margin: 0;
+          font-weight: bold; }
+  #addItemPage button {
     margin: 10px 15px; }
   #addItemPage label {
     color: deeppink;
     display: block; }
+
+body {
+  font-family: Fira Sans, serif; }
 
 /*# sourceMappingURL=main.css.map */

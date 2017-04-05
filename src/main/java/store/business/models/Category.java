@@ -11,4 +11,50 @@ public class Category implements Serializable {
     private String name;
     private Long upperCategoryId;
     private Integer rank;
+
+    Category(Category category) {
+        id = category.id;
+        name = category.name;
+        upperCategoryId = category.upperCategoryId;
+        rank = category.rank;
+    }
+
+    Category(Long id, String name, Long upperCategoryId, Integer rank) {
+        this.id = id;
+        this.name = name;
+        this.upperCategoryId = upperCategoryId;
+        this.rank = rank;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+//    public void setId(Long id) {
+//        this.id = id;
+//    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Long getUpperCategoryId() {
+        return upperCategoryId;
+    }
+
+    public void setUpperCategoryId(Long upperCategoryId) {
+        this.upperCategoryId = upperCategoryId;
+    }
+
+    public Integer getRank() {
+        return rank;
+    }
+
+    public void setRank(Integer rank) {
+        this.rank = rank;
+    }
 }

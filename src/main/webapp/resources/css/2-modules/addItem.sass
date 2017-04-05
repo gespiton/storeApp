@@ -5,15 +5,30 @@
   width: 80%
   margin: 0 10% 0 10%
   form
+    .dropdown-submenu
+      position: relative
+
+    .dropdown-submenu .dropdown-menu
+      top: 0
+      left: 100%
+      margin-top: -1px
     #flexWrap
       display: flex
       flex-direction: row
       flex-wrap: wrap
       .form-group
-        width: 40%
+        width: 45%
         margin: 10px 15px
-    button
-      margin: 10px 15px
+        .categoryTag
+          display: block
+        #category
+          font-weight: bold
+          button.categoryBtn
+            margin: 0
+            font-weight: bold
+
+  button
+    margin: 10px 15px
 
   label
     color: deeppink

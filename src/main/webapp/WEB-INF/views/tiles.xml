@@ -5,7 +5,7 @@
 
 <tiles-definitions>
     <!-- Template Definition -->
-    <definition name="hello" template="/WEB-INF/views/layouts/defaultLayout.ftl" templateType="freemarker">
+    <definition name="addItem" template="/WEB-INF/views/layouts/defaultLayout.ftl" templateType="freemarker">
         <put-attribute name="title" value="hello" />
         <put-attribute name="header" value="/WEB-INF/views/templates/header.ftl" type="freemarker"/>
         <put-attribute name="body" value="/WEB-INF/views/templates/addItem.ftl" type="freemarker"/>

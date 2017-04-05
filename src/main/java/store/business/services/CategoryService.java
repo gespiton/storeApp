@@ -6,6 +6,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import store.business.mappers.CategoryMapper;
 import store.business.models.Category;
+import store.business.models.ComposedCategory;
+
+import java.util.List;
 
 /**
  * Created by sher on 4/4/2017.
@@ -17,12 +20,23 @@ public class CategoryService {
     @Autowired
     private CategoryMapper mapper;
 
-    public Category getCategoryById(@Param("id") Long id) {
+    public List<Category> getAllcategory() {
+        return mapper.getAllcategory();
+    }
 
+    public Category getCategoryById(@Param("id") Long id) {
         return mapper.getCategoryById(id);
     }
 
     public String getNameById(@Param("id") Long id) {
         return mapper.getNameById(id);
+    }
+
+    public Integer getIdByName(@Param("name") String name) {
+        return mapper.getIdByName(name);
+    }
+
+    public List<ComposedCategory> getDisplayedCategory() {
+        return ComposedCategory.buildComposedCategorysFromCategorys(getAllcategory());
     }
 }
