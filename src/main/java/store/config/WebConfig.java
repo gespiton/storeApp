@@ -117,9 +117,6 @@ public class WebConfig extends WebMvcConfigurerAdapter {
 
         String imagePath = System.getProperty("catalina.home") + File.separator + "tempFiles/";
         registry.addResourceHandler("/images/**")
-                .addResourceLocations("file:"+ imagePath);
-
+                .addResourceLocations("file:" + imagePath);
     }
-
-
 }

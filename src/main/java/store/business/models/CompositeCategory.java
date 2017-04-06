@@ -9,19 +9,20 @@ import java.util.stream.Collectors;
 /**
  * Created by 周鸿清 on 5/4/2017.
  */
-public class ComposedCategory extends Category {
-    List<ComposedCategory> subCategory = null;
+public class CompositeCategory extends Category {
+    List<CompositeCategory> subCategory = null;
 
-    public ComposedCategory(Category category) {
+    public CompositeCategory(Category category) {
         super(category);
     }
 
-    public static List<ComposedCategory> buildComposedCategorysFromCategorys(List<Category> input) {
-        Map<Long, ComposedCategory> dict = new HashMap<>();
+    public static List<CompositeCategory> buildComposedCategorysFromCategorys(List<Category> input) {
+        Map<Long, CompositeCategory> dict = new HashMap<>();
 
         input.forEach(
-                category -> dict.put(category.getId(), new ComposedCategory(category))
+                category -> dict.put(category.getId(), new CompositeCategory(category))
         );
+
         dict.values().forEach(
                 catetory -> {
                     if (catetory.getRank() != null) {
@@ -33,22 +34,13 @@ public class ComposedCategory extends Category {
         return dict.values().stream().filter(
                 category -> category.getRank() == null
         ).collect(Collectors.toList());
-
-//        List<ComposedCategory> result = new ArrayList<>(baseCategory.size());
-//
-//        baseCategory.forEach(
-//                category -> {
-//                    while (category.)
-//                }
-//        );
-
     }
 
-    public List<ComposedCategory> getSubCategory() {
+    public List<CompositeCategory> getSubCategory() {
         return subCategory;
     }
 
-    private void addSubCategory(ComposedCategory catetory) {
+    private void addSubCategory(CompositeCategory catetory) {
         if (subCategory == null)
             subCategory = new ArrayList<>();
         subCategory.add(catetory);

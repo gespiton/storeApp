@@ -5,7 +5,6 @@ package store.web.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
@@ -31,13 +30,13 @@ public class ItemManageController {
     @Value("${appName}")
     private String app;
 
-    @RequestMapping(value = "/", method = RequestMethod.GET, produces = "text/html;charset=UTF-8")
+    @RequestMapping(value = "/", method = RequestMethod.GET)
     public String home(Locale locale, Model model) {
         return "redirect:/viewAllItems";
     }
 
-    @RequestMapping(value = "/addItem", method = RequestMethod.GET, produces = "text/html;charset=UTF-8")
-    public String init(@ModelAttribute("model") ModelMap model) {
+    @RequestMapping(value = "/addItem", method = RequestMethod.GET)
+    public String addItem(@ModelAttribute("model") ModelMap model) {
         //TODO transfer this, for test here
         model.addAttribute("composedCategoryList", categoryService.getDisplayedCategory());
         model.addAttribute("action", "add");
@@ -72,7 +71,8 @@ public class ItemManageController {
 
         // todo default values,
 //        String timeStamp = new SimpleDateFormat("yyyyMMdd:HH:mm:ss").format(Calendar.getInstance().getTime());
-        item.setName("test item");
+        if (item.getName() != null)
+            item.setName("test item");
         item.setWeight(10.0);
         item.setStockNumber(100);
         item.setPreSaleNumber(100);

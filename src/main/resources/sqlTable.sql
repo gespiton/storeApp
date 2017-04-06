@@ -1,32 +1,35 @@
 USE test;
 DROP TABLE items;
 CREATE TABLE items (
-  id                 BIGINT AUTO_INCREMENT PRIMARY KEY,
-  name               VARCHAR(40)   NOT NULL,
-  serialCode         VARCHAR(40) UNIQUE NOT NULL,
-  weight             DOUBLE DEFAULT 0,
-  stockNumber        INT    DEFAULT 0,
-  preSaleNumber      INT    DEFAULT 0,
-  shop               VARCHAR(40),
-  itroducedUserPrice DOUBLE DEFAULT 0,
-  marketPrice        DOUBLE DEFAULT 0,
-  bankPrice          DOUBLE DEFAULT 0,
-  exchangeCredit     INT    DEFAULT 0,
-  catagoryName       VARCHAR(40),
-  brandName          VARCHAR(40),
-  onMarketTime       VARCHAR(20),
-  outMarketTime      VARCHAR(20),
-  addedTime          VARCHAR(20),
-  lastModifiedTime   VARCHAR(20),
-  description        VARCHAR(400),
-  imagePath        VARCHAR(40),
-  isDividable        BOOL   DEFAULT FALSE
+  id               BIGINT AUTO_INCREMENT PRIMARY KEY,
+  name             VARCHAR(40)        NOT NULL,
+  serialCode       VARCHAR(40) UNIQUE NOT NULL,
+  weight           DOUBLE DEFAULT 0,
+  stockNumber      INT    DEFAULT 0,
+  preSaleNumber    INT    DEFAULT 0,
+  shop             VARCHAR(40),
+  introducedPrice  DOUBLE DEFAULT 0,
+  marketPrice      DOUBLE DEFAULT 0,
+  bankPrice        DOUBLE DEFAULT 0,
+  exchangeCredit   INT    DEFAULT 0,
+  categoryName     VARCHAR(40),
+  brandName        VARCHAR(40),
+  onMarketTime     VARCHAR(20),
+  outMarketTime    VARCHAR(20),
+  addedTime        VARCHAR(20),
+  lastModifiedTime VARCHAR(20),
+  description      VARCHAR(1000),
+  imagePath        VARCHAR(100),
+  isDividable      BOOL   DEFAULT FALSE,
+  defaultExpress   VARCHAR(20)
 );
 INSERT INTO items (name, serialCode, weight,
                    stockNumber, preSaleNumber) VALUES ('me', 123341, 23, 1, 13);
 
 INSERT INTO items (name, serialCode, weight,
                    stockNumber, preSaleNumber) VALUES ('you', 1233431, 23, 1, 13);
+INSERT INTO items (id, name, serialCode, weight, stockNumber, preSaleNumber, shop, itroducedUserPrice, marketPrice, bankPrice, exchangeCredit, catagoryName, brandName, onMarketTime, outMarketTime, addedTime, lastModifiedTime, description, imageNumber, isDividable)
+VALUES ();
 SELECT *
 FROM items;
 
@@ -62,3 +65,6 @@ SELECT *
 FROM category;
 
 DELETE FROM items;
+
+SELECT *
+FROM items;

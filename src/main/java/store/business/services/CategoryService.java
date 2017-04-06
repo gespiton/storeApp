@@ -1,12 +1,11 @@
 package store.business.services;
 
-import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import store.business.mappers.CategoryMapper;
 import store.business.models.Category;
-import store.business.models.ComposedCategory;
+import store.business.models.CompositeCategory;
 
 import java.util.List;
 
@@ -36,8 +35,8 @@ public class CategoryService {
         return mapper.getIdByName(name);
     }
 
-    public List<ComposedCategory> getDisplayedCategory() {
+    public List<CompositeCategory> getDisplayedCategory() {
         // todo optimize here
-        return ComposedCategory.buildComposedCategorysFromCategorys(getAllcategory());
+        return CompositeCategory.buildComposedCategorysFromCategorys(getAllcategory());
     }
 }
