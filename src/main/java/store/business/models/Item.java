@@ -12,7 +12,7 @@ public class Item implements Serializable {
 
     private Long id;
     private String name;
-    private Long serialCode;
+    private String serialCode;
     private Double weight;
     private Integer stockNumber;
     private Integer preSaleNumber;
@@ -28,13 +28,14 @@ public class Item implements Serializable {
     private String addedTime;
     private String lastModifiedTime;
     private String description;
-    private String imageNumber;
+    private String imagePath;
     private Boolean isDividable;
+    private String defaultExpress;
 
     public Item() {
     }
 
-    public Item(Long id, String name, Long serialCode, Double weight, Integer stockNumber, Integer preSaleNumber, String shop, Double introducedPrice, Double marketPrice, Double bankPrice, Integer exchangeCredit, String categoryName, String brandName, String onMarketTime, String outMarketTime, String addedTime, String lastModifiedTime, String description, String imageNumber, Boolean isDividable) {
+    public Item(Long id, String name, String serialCode, Double weight, Integer stockNumber, Integer preSaleNumber, String shop, Double introducedPrice, Double marketPrice, Double bankPrice, Integer exchangeCredit, String categoryName, String brandName, String onMarketTime, String outMarketTime, String addedTime, String lastModifiedTime, String description, String imageNumber, Boolean isDividable, String express) {
         this.id = id;
         this.name = name;
         this.serialCode = serialCode;
@@ -53,8 +54,9 @@ public class Item implements Serializable {
         this.addedTime = addedTime;
         this.lastModifiedTime = lastModifiedTime;
         this.description = description;
-        this.imageNumber = imageNumber;
+        this.imagePath = imageNumber;
         this.isDividable = isDividable;
+        this.defaultExpress = express;
     }
 
 
@@ -74,16 +76,12 @@ public class Item implements Serializable {
         this.name = name;
     }
 
-    @Override
-    public String toString() {
-        return id + " " + name;
-    }
 
-    public Long getSerialCode() {
+    public String getSerialCode() {
         return serialCode;
     }
 
-    public void setSerialCode(long serialCode) {
+    public void setSerialCode(String serialCode) {
         this.serialCode = serialCode;
     }
 
@@ -207,12 +205,12 @@ public class Item implements Serializable {
         this.description = description;
     }
 
-    public String getImageNumber() {
-        return imageNumber;
+    public String getImagePath() {
+        return imagePath;
     }
 
-    public void setImageNumber(String imageNumber) {
-        this.imageNumber = imageNumber;
+    public void setImagePath(String imagePath) {
+        this.imagePath = imagePath;
     }
 
     public Boolean getDividable() {
@@ -221,5 +219,19 @@ public class Item implements Serializable {
 
     public void setDividable(Boolean dividable) {
         isDividable = dividable;
+    }
+
+
+    @Override
+    public String toString() {
+        return id + " " + name;
+    }
+
+    public String getDefaultExpress() {
+        return defaultExpress;
+    }
+
+    public void setDefaultExpress(String defaultExpress) {
+        this.defaultExpress = defaultExpress;
     }
 }

@@ -19,7 +19,7 @@ import javax.sql.DataSource;
  * holly
  */
 @Configuration
-@PropertySource(value = {"classpath:database.properties"})
+@PropertySource(value = {"classpath:app.properties"})
 @EnableTransactionManagement
 public class MyBatisConfig implements EnvironmentAware {
 

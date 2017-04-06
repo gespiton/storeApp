@@ -1,6 +1,6 @@
 import org.junit.*;
 import org.springframework.test.web.servlet.MockMvc;
-import store.web.controllers.AddItemController;
+import store.web.controllers.ItemManageController;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
@@ -12,8 +12,8 @@ import static org.springframework.test.web.servlet.setup.MockMvcBuilders.standal
 public class HelloControllerTest {
     @Test
     public void testHelloPage() throws Exception {
-        AddItemController controller = new AddItemController();
+        ItemManageController controller = new ItemManageController();
         MockMvc mockMvc = standaloneSetup(controller).build();
-        mockMvc.perform(get("/")).andExpect(view().name("redirect:/items"));
+        mockMvc.perform(get("/")).andExpect(view().name("redirect:/viewAllItems"));
     }
 }

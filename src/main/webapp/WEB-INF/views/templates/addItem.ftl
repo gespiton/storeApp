@@ -4,14 +4,12 @@
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <#macro subCategory category>
-<#--<div class="form-control dropdown">-->
-<#--<div data-toggle="dropdown" class="dropdown-toggle expandable">${category.name}<b class="caret"></b></div>-->
 <li class="dropdown-submenu">
-    <a href="#" class="categoryTag expandable">${category.name}<b class="caret"></b></a>
+    <a tabindex="-1" class="categoryTag expandable">${category.name}</a>
     <ul class="dropdown-menu">
         <#list category.subCategory as cate>
             <#if !cate.subCategory??>
-                <li class="categoryTag"><a class="categoryTag">${cate.name}</a></li>
+                <li><a class="categoryTag">${cate.name}</a></li>
             <#else>
                 <@subCategory cate>
                 </@subCategory>
@@ -19,78 +17,44 @@
         </#list>
     </ul>
 </li>
-<#--</div>-->
 </#macro>
+
+<#macro formfield fieldName t="text" addition="">
+<div class="form-group">
+    <label for="${fieldName}">${fieldName}</label>
+    <input type="${t}" ${addition} class="form-control" name="${fieldName}"/>
+</div>
+</#macro>
+
 <div id="addItemPage">
-    <form name="item" action="add" method="post">
+    <form name="item" action="${model['action']}" method="post" enctype="multipart/form-data">
         <div id="flexWrap">
-
+        <#--TODO group add-on-->
+        <@formfield "name"  "text" "require"></@formfield>
+        <@formfield "serialCode" "text" "required"></@formfield>
+        <@formfield "weight" "number"></@formfield>
+        <@formfield "stockNumber" "number"></@formfield>
+        <@formfield "preSaleNumber" "number"></@formfield>
+        <@formfield "shop"></@formfield>
+        <@formfield "introducedPrice" "number"></@formfield>
+        <@formfield "marketPrice" "number"></@formfield>
+        <@formfield "bankPrice" "number"></@formfield>
+        <#--<@formfield "exchangeCredit" "number"></@formfield>-->
             <div class="form-group">
-                <label for="id">Name</label>
-                <input type="text" class="form-control" name="name"/>
-            </div>
-            <div class="form-group">
-                <label for="serialCode">serialCode</label>
-                <input type="text" class="form-control" name="serialCode"/>
-            </div>
-
-            <div class="form-group">
-                <label for="weight">weight</label>
-                <input type="text" class="form-control" name="weight"/>
-            </div>
-
-            <div class="form-group">
-                <label for="stockNumber">stockNumber</label>
-                <input type="text" class="form-control" name="stockNumber"/>
-            </div>
-
-            <div class="form-group">
-                <label for="preSaleNumber">preSaleNumber</label>
-                <input type="text" class="form-control" name="preSaleNumber"/>
-            </div>
-
-            <div class="form-group">
-                <label for="shop">shop</label>
-                <input type="text" class="form-control" name="shop"/>
-            </div>
-
-            <div class="form-group">
-                <label for="introducedPrice">introducedPrice</label>
-                <input type="text" class="form-control" name="introducedPrice"/>
-            </div>
-
-            <div class="form-group">
-                <label for="marketPrice">marketPrice</label>
-                <input type="text" class="form-control" name="marketPrice"/>
-            </div>
-
-            <div class="form-group">
-                <label for="bankPrice">bankPrice</label>
-                <input type="text" class="form-control" name="bankPrice"/>
-            </div>
-
-            <div class="form-group">
-                <label for="exchangeCredit">exchangeCredit</label>
-                <input type="text" class="form-control" name="exchangeCredit"/>
-            </div>
-
-            <div class="form-group">
-
                 <label for="categoryName">categoryName</label>
-                <input type="hidden" class="form-control" name="categoryName"/>
-
+                <input type="hidden" class="form-control" id="hiddenCategoryName" name="categoryName"/>
                 <div class="dropdown" id="category">
-                    <button class="btn btn-default dropdown-toggle form-control categoryBtn" type="button"
+                    <button class="btn btn-default form-control" id="categoryBtn" type="button"
                             data-toggle="dropdown">
                         chose
                     </button>
-                    <ul class="dropdown-menu">
+                    <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
                     <#list model["composedCategoryList"] as category>
                         <#if category.subCategory??>
                             <@subCategory category>
                             </@subCategory>
                         <#else >
-                            <li><a href="#">${category.name}</a></li>
+                            <li><a class="categoryTag">${category.name}</a></li>
                         </#if>
                     </#list>
                     <#--<li><a href="#">Inbox</a></li>-->
@@ -101,56 +65,42 @@
                     </ul>
                 </div>
             </div>
-            <div class="form-group">
-                <label for="brandName">brandName</label>
-                <input type="text" class="form-control" name="brandName"/>
+        <@formfield "brandName"></@formfield>
+        <@formfield "onMarketTime" "datetime-local"></@formfield>
+        <@formfield "outMarketTime" "datetime-local"></@formfield>
+        <#--<@formfield "addedTime"></@formfield>-->
+        <#--<@formfield "lastModifiedTime"></@formfield>-->
+        <@formfield "description"></@formfield>
+        <#--<@formfield "imagePath"></@formfield>-->
+        <#--todo default value -->
+            <div class="form-group" id="express">
+                <label>default Express</label>
+                <select name="defaultExpress" class="form-control">
+                    <option>union</option>
+                    <option>mars</option>
+                    <option>moon express</option>
+                </select>
             </div>
 
-            <div class="form-group">
-                <label for="outMarketTime">outMarketTime</label>
-                <input type="text" class="form-control" name="outMarketTime"/>
+            <div class="form-group" id="fileUpload">
+                <label>upload image</label>
+                <input type="file" class="file" name="image" id="input-id"/>
             </div>
 
-        <#--<div class="form-group">-->
-        <#--<label for="addedTime">addedTime</label>-->
-        <#--<input type="text" class="form-control" name="addedTime"/>-->
-        <#--</div>-->
-
-        <#--<div class="form-group">-->
-        <#--<label for="lastModifiedTime">lastModifiedTime</label>-->
-        <#--<input type="text" class="form-control" name="lastModifiedTime"/>-->
-        <#--</div>-->
-
-            <div class="form-group">
-                <label for="description">description</label>
-                <input type="text" class="form-control" name="description"/>
-            </div>
-
-            <div class="form-group">
-                <label for="imageNumber">imageNumber</label>
-                <input type="text" class="form-control" name="imageNumber"/>
-            </div>
-
-            <div class="form-group">
-                <label for="isDividable">isDividable</label>
-                <input type="text" class="form-control" name="isDividable"/>
+            <div class="form-group" id="dividable">
+                <div class="vertical-center">
+                    <label>
+                        Dividable
+                    </label>
+                    <input type="checkbox" class="checkbox" name="Dividable" checked/></div>
             </div>
 
         </div>
-        <button type="submit" class="btn btn-default" value="Save">add</button>
+        <button type="submit" class="btn btn-primary pull-right submitBtn" value="Save">add</button>
     </form>
 <#--</fieldset>-->
 
-    <table class="datatable">
-        <tr>
-            <th>Make</th>
-            <th>Model</th>
-        </tr>
-    <#list model["itemList"] as Item>
-        <tr>
-            <td>${Item.name}</td>
-            <td>${Item.id}</td>
-        </tr>
-    </#list>
-    </table>
+
 </div>
+
+

@@ -29,8 +29,12 @@ public class ItemService {
     @Autowired
     private ItemMapper itemMapper;
 
-    public Item getItemById(@Param("id") long id) {
+    public Item getItemById(long id) {
         return itemMapper.getItemById(id);
+    }
+
+    public Item getItemBySerial(String serial) {
+        return itemMapper.getItemBySerial(serial);
     }
 
     public List<Item> getAll() {
@@ -38,9 +42,15 @@ public class ItemService {
     }
 
     // for test
-    public boolean addItem(Item item) {
-        boolean b = itemMapper.savaItem(item.getName(), item.getSerialCode());
-        return b;
+    public String addItem(Item item) {
+        String message = "";
+        try {
+            boolean b = itemMapper.savaItem(item.getName(), item.getSerialCode(), item.getWeight(), item.getStockNumber(), item.getPreSaleNumber(), item.getShop(), item.getIntroducedPrice(), item.getMarketPrice(), item.getBankPrice(), item.getExchangeCredit(), item.getCategoryName(), item.getBrandName(), item.getOnMarketTime(), item.getOutMarketTime(), item.getAddedTime(), item.getLastModifiedTime(), item.getDescription(), item.getImagePath(), item.getDividable(), item.getDefaultExpress());
+        } catch (Exception ignored) {
+            message = ignored.getMessage();
+            throw ignored;
+        }
+        return message;// when message is not "", meaning something happened
     }
 
 

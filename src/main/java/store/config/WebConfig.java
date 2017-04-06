@@ -11,18 +11,14 @@ import org.apache.tiles.request.render.BasicRendererFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.http.MediaType;
-import org.springframework.http.converter.HttpMessageConverter;
-import org.springframework.http.converter.StringHttpMessageConverter;
-import org.springframework.web.filter.CharacterEncodingFilter;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
+import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 import org.springframework.web.servlet.config.annotation.*;
 import org.springframework.web.servlet.view.tiles3.TilesConfigurer;
 import org.springframework.web.servlet.view.tiles3.TilesViewResolver;
-import sun.nio.cs.UTF_32;
 
-import java.util.Arrays;
-import java.util.List;
-import java.nio.charset.*;
+import java.io.File;
 
 /**
  * Created by 周鸿清 on 8/3/2017.
@@ -31,7 +27,7 @@ import java.nio.charset.*;
 @Configuration
 @EnableWebMvc
 @ComponentScan("store.web")
-
+@PropertySource(value = {"classpath:app.properties"})
 // remember to set the web source directory in project setting
 public class WebConfig extends WebMvcConfigurerAdapter {
 
@@ -43,13 +39,20 @@ public class WebConfig extends WebMvcConfigurerAdapter {
 //        converters.add(stringConverter);
 //    }
 
-//    @Bean
+    //    @Bean
 //    public CharacterEncodingFilter characterEncodingFilter() {
 //        final CharacterEncodingFilter characterEncodingFilter = new CharacterEncodingFilter();
 //        characterEncodingFilter.setEncoding("UTF-8");
 //        characterEncodingFilter.setForceEncoding(true);
 //        return characterEncodingFilter;
-//    }
+//
+
+
+    // bean to get properties
+    @Bean
+    public static PropertySourcesPlaceholderConfigurer placeHolderConfigurer() {
+        return new PropertySourcesPlaceholderConfigurer();
+    }
 
     //tile3 configure
     @Bean
@@ -82,6 +85,14 @@ public class WebConfig extends WebMvcConfigurerAdapter {
         return tilesConfigurer;
     }
 
+    // file upload handler
+    @Bean
+    public CommonsMultipartResolver multipartResolver() {
+        CommonsMultipartResolver multipartResolver = new CommonsMultipartResolver();
+//        multipartResolver.
+        return multipartResolver;
+    }
+
     //     tiles3 view resolver
     @Override
     public void configureViewResolvers(ViewResolverRegistry registry) {
@@ -103,5 +114,12 @@ public class WebConfig extends WebMvcConfigurerAdapter {
         // fuck, there got to be a / at the end
         registry.addResourceHandler("/resources/**")
                 .addResourceLocations("/resources/");
+
+        String imagePath = System.getProperty("catalina.home") + File.separator + "tempFiles/";
+        registry.addResourceHandler("/images/**")
+                .addResourceLocations("file:"+ imagePath);
+
     }
+
+
 }

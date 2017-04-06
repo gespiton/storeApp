@@ -17,74 +17,20 @@
 </head>
 
 <body>
-<div class="flex-container">
+<#--<div class="flex-container">-->
 <@tiles.insertAttribute name="header"/>
+<#--pushdown body-->
+<div style="height: 51px"></div>
 <@tiles.insertAttribute name="body"/>
-</div>
+<#--</div>-->
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script type="text/javascript" src="/storeApp/resources/css/0-tools/bootstrap/javascripts/bootstrap.js"></script>
-<script type="text/javascript">
-    $(document).ready(function () {
-//        var need = 0;
-                var heri = [$('#category')];
-
-                // pause function
-                function sleep(ms) {
-                    return new Promise(resolve => setTimeout(resolve, ms));
-                }
-
-                async function ina(e) {
-                    console.log('in');
-//                    console.log(heri.length);
-                    console.log($(this).text());
-                    if (heri[heri.length - 1].has($(this)).length != 0) {
-                        //going down
-                        console.log('on');
-
-                        if ($(this).attr('class').endsWith('expandable')) {
-                            $(this).next('ul').toggle();
-                            heri.push($(this).next('ul'));
-                        }
-                        else
-                            heri.push($(this));
-
-//                        e.stopPropagation();
-//                        e.preventDefault();
-                    } else if (heri[0].has($(this)).length != 0) {
-                        // going parallel
-                        console.log('wait');
-                        await sleep(120);
-                        $(this).next('ul').toggle();
-                        heri.push($(this).next('ul'));
-                    }
-                }
-
-                async function out(e) {
-//                    console.log($(this).get());
-                    console.log('out');
-//                    setTimeout(function () {
-                    await sleep(100);
-//                  // goes down
-                    if ($(this).next('ul').has(heri[heri.length - 1]).length != 0)
-                        return;
-
-                    // goes up or out
-                    while (heri[heri.length - 1].has($(this)).length == 0 && heri.length > 1) {
-                        const v = heri[heri.length - 1];
-//                        console.log(v.html());
-                        if (v.attr('class') && v.attr('class').endsWith('dropdown-menu')) {
-                            heri.pop().toggle();
-                        } else
-                            heri.pop();
-                        console.log('pop');
-                    }
-                    console.log('finished ' + heri.length);
-//                    }, 100);
-                }
-
-                $('a.categoryTag').hover(ina, out);
-            }
-    );
-</script>
+<script type="text/javascript" src="/storeApp/resources/js/addItemPage.js"></script>
+<script src="/storeApp/resources/js/plugins/canvas-to-blob.min.js" type="text/javascript"></script>
+<script src="/storeApp/resources/js/plugins/purify.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="/storeApp/resources/js/fileinput.min.js"></script>
+<#--todo font awesome not work,change folder-->
+<script src="/storeApp/resources/js/theme.js"></script>
+<script src="https://use.fontawesome.com/3098833ac6.js"></script>
 </body>
 </html>

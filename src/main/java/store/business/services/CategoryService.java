@@ -24,19 +24,20 @@ public class CategoryService {
         return mapper.getAllcategory();
     }
 
-    public Category getCategoryById(@Param("id") Long id) {
+    public Category getCategoryById(Long id) {
         return mapper.getCategoryById(id);
     }
 
-    public String getNameById(@Param("id") Long id) {
+    public String getNameById(Long id) {
         return mapper.getNameById(id);
     }
 
-    public Integer getIdByName(@Param("name") String name) {
+    public Integer getIdByName(String name) {
         return mapper.getIdByName(name);
     }
 
     public List<ComposedCategory> getDisplayedCategory() {
+        // todo optimize here
         return ComposedCategory.buildComposedCategorysFromCategorys(getAllcategory());
     }
 }
