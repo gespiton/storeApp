@@ -1,14 +1,19 @@
 * connect database
 	* dependency, mybatisconfigure, properties(classPath)
+
 * dataTransfer
-	* @modelMap
-	* @requestAttribute
+* to view
+	* @modelMap naming convention
+* to controller
+	* @requestAttribute,url,@modelAttribute
+	* picture: multipart
 	* form, name match that of your models
 	* picture store position : static file handler 
 
 	
 * ftl
 	* macro
+	* list
 
 * css
 	* sass
@@ -28,10 +33,14 @@
 	* inner class
 	* chrome debug
 	* exception information too much
+	* change css too slow
 
 	
 * problem
+	* picture location
 	* can't use chinese
 	* test, I first write test than integrate mybatis
 	* package what part 
 	* js how to import
+	* model is one? or more?
+	* user, 

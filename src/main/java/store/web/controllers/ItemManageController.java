@@ -64,7 +64,6 @@ public class ItemManageController {
         return "viewAllItems";
     }
 
-
     private boolean verifyItem(Item item) {
         // todo add default value for field
         // todo verification

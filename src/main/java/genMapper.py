@@ -1,4 +1,5 @@
-fields = '''    private String name;
+fields = '''
+    private String name;
     private String serialCode;
     private Double weight;
     private Integer stockNumber;
@@ -17,7 +18,8 @@ fields = '''    private String name;
     private String description;
     private String imageNumber;
     private Boolean isDividable;
-    private String defaultExpress;'''
+    private String defaultExpress;
+    '''
 
 fieldLi = [s.strip().split(' ')[1:] for s in fields.strip().split(';')[:-1]]
 

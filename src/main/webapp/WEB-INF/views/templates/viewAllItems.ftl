@@ -1,7 +1,6 @@
 <#ftl encoding='UTF-8'>
 <#assign tiles=JspTaglibs["http://tiles.apache.org/tags-tiles"]>
-
-<#--<@model['appName'].bind appName/>-->
+<#--author: 周鸿清-->
 <h1>
     hi,there
 </h1>
