@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="xmu.mystore.goodsmgt.hqchou.mappers.CategoryMapper">
+    <resultMap id="CategoryResultMap" type="xmu.mystore.goodsmgt.hqchou.model.Category">
+        <result column="name" property="name"/>
+        <result column="upperCategoryId" property="upperCategoryId"/>
+        <result column="rank" property="rank"/>
+        <result column="type" property="type"/>
+        <result column="priority" property="priority"/>
+        <association property="upperCategoryName" column="upperCategoryId" select="getNameById"/>
+    </resultMap>
+    <select id="getAllcategory" resultMap="CategoryResultMap">
+        SELECT * FROM category
+    </select>
+
+    <select id="getCategoryById" parameterType="long" resultMap="CategoryResultMap">
+        SELECT * FROM category
+        WHERE id = #{id}
+    </select>
+    <select id="getNameById" parameterType="int" resultType="String">
+        SELECT NAME
+        FROM category
+        where id = #{id}
+    </select>
+    <update id="updateCategory" parameterType="xmu.mystore.goodsmgt.hqchou.model.Category">
+      UPDATE category
+      set
+      name = #{name},
+      upperCategoryId = #{upperCategoryId},
+      rank = #{rank},
+      type = #{type},
+      priority = #{priority}
+      WHERE id = #{id}
+    </update>
+
+</mapper>
+

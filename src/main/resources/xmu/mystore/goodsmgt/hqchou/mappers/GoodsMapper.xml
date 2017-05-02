@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="xmu.mystore.goodsmgt.hqchou.mappers.GoodsMapper">
+
+    <resultMap id="ItemResultMap" type="xmu.mystore.goodsmgt.hqchou.model.Goods">
+        <id column="id" property="id"/>
+        <result column="name" property="name"/>
+        <result column="serialCode" property="serialCode"/>
+        <result column="weight" property="weight"/>
+        <result column="stockNumber" property="stockNumber"/>
+        <result column="preSaleNumber" property="preSaleNumber"/>
+        <result column="storeId" property="storeId"/>
+        <result column="midUserPrice" property="midUserPrice"/>
+        <result column="marketPrice" property="marketPrice"/>
+        <result column="realPrice" property="realPrice"/>
+        <result column="redeemPoint" property="redeemPoint"/>
+        <result column="categoryId" property="categoryId"/>
+        <result column="brandId" property="brandId"/>
+        <result column="standId" property="standId"/>
+        <result column="addTime" property="addTime"/>
+        <result column="lastModifiedTime" property="lastModifiedTime"/>
+        <result column="description" property="description"/>
+        <result column="imagePath" property="imagePath"/>
+        <result column="isDividable" property="isDividable"/>
+        <result column="defaultExpress" property="defaultExpress"/>
+    </resultMap>
+
+
+    <select id="getItemById" parameterType="long" resultMap="ItemResultMap">
+        SELECT *
+        FROM goods
+        WHERE id = #{id}
+    </select>
+
+    <select id="getAll" resultMap="ItemResultMap">
+        SELECT *
+        FROM goods
+    </select>
+
+    <select id="getItemBySerial" resultMap="ItemResultMap" parameterType="String">
+        SELECT *
+        FROM goods
+        WHERE serialCode=#{serial}
+    </select>
+
+    <insert id="saveItem" parameterType="xmu.mystore.goodsmgt.hqchou.model.Goods">
+       insert into goods (name,serialCode,weight,stockNumber,preSaleNumber,storeId,midUserPrice,marketPrice,realPrice,redeemPoint,categoryId,brandId,standId,addTime,lastModifiedTime,description,imagePath,isDividable,defaultExpress)
+       VALUES (#{name},#{serialCode},#{weight},#{stockNumber},#{preSaleNumber},#{storeId},#{midUserPrice},#{marketPrice},#{realPrice},#{redeemPoint},#{categoryId},#{brandId},#{standId},#{addTime},#{lastModifiedTime},#{description},#{imagePath},#{isDividable},#{defaultExpress})
+    </insert>
+
+    <update id="updateItem" parameterType="xmu.mystore.goodsmgt.hqchou.model.Goods">
+        update goods
+        SET
+        name = #{name},
+        serialCode = #{serialCode},
+        weight = #{weight},
+        stockNumber = #{stockNumber},
+        preSaleNumber = #{preSaleNumber},
+        storeId = #{storeId},
+        midUserPrice = #{midUserPrice},
+        marketPrice = #{marketPrice},
+        realPrice = #{realPrice},
+        redeemPoint = #{redeemPoint},
+        categoryId = #{categoryId},
+        brandId = #{brandId},
+        standId = #{standId},
+        addTime = #{addTime},
+        lastModifiedTime = #{lastModifiedTime},
+        description = #{description},
+        imagePath = #{imagePath},
+        isDividable = #{isDividable},
+        defaultExpress = #{defaultExpress}
+        where id = #{id}
+    </update>
+
+</mapper>

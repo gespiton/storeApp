@@ -379,7 +379,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "+shop",
+											"text": "+storeId",
 											"horizontalAlignment": 0,
 											"verticalAlignment": 5,
 											"wordWrap": false
@@ -466,7 +466,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "+bankPrice",
+											"text": "+realPrice",
 											"horizontalAlignment": 0,
 											"verticalAlignment": 5,
 											"wordWrap": false
@@ -495,7 +495,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "+exchangeCredit",
+											"text": "+redeemPoint",
 											"horizontalAlignment": 0,
 											"verticalAlignment": 5,
 											"wordWrap": false
@@ -553,7 +553,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "+brandName",
+											"text": "+brandId",
 											"horizontalAlignment": 0,
 											"verticalAlignment": 5,
 											"wordWrap": false
@@ -698,7 +698,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "+addedTime",
+											"text": "+addTime",
 											"horizontalAlignment": 0,
 											"verticalAlignment": 5,
 											"wordWrap": false
@@ -2759,7 +2759,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFbDvZbMytxH70="
 							},
-							"name": "shop",
+							"name": "storeId",
 							"visibility": "public",
 							"isStatic": false,
 							"isLeaf": false,
@@ -2810,7 +2810,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFbDvZbMytxH70="
 							},
-							"name": "bankPrice",
+							"name": "realPrice",
 							"visibility": "public",
 							"isStatic": false,
 							"isLeaf": false,
@@ -2827,7 +2827,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFbDvZbMytxH70="
 							},
-							"name": "exchangeCredit",
+							"name": "redeemPoint",
 							"visibility": "public",
 							"isStatic": false,
 							"isLeaf": false,
@@ -2861,7 +2861,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFbDvZbMytxH70="
 							},
-							"name": "brandName",
+							"name": "brandId",
 							"visibility": "public",
 							"isStatic": false,
 							"isLeaf": false,
@@ -2946,7 +2946,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFbDvZbMytxH70="
 							},
-							"name": "addedTime",
+							"name": "addTime",
 							"visibility": "public",
 							"isStatic": false,
 							"isLeaf": false,

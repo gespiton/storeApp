@@ -33,6 +33,9 @@
                         <#--<li><a href="#">One more separated link</a></li>-->
                     </ul>
                 </li>
+                <li>
+                    <a href="viewCategory">category</a>
+                </li>
             </ul>
             <#--<form class="navbar-form navbar-left">-->
                 <#--<div class="form-group">-->

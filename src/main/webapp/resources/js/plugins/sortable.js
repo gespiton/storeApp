@@ -456,7 +456,7 @@
 							break;
 						}
 
-						target = parent; // store last element
+						target = parent; // xmu.mystore last element
 					}
 					/* jshint boss:true */
 					while (parent = parent.parentNode);

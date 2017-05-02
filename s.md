@@ -8,7 +8,7 @@
 	* @requestAttribute,url,@modelAttribute
 	* picture: multipart
 	* form, name match that of your models
-	* picture store position : static file handler 
+	* picture xmu.mystore position : static file handler 
 
 	
 * ftl
@@ -23,7 +23,7 @@
 	* mapper -> models -> services
 	* where to put propertices
 	* category: use composit pattern to implement
-	* image: store the serial as name
+	* image: xmu.mystore the serial as name
 	* script
 
 	

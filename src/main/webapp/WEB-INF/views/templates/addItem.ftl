@@ -27,7 +27,7 @@
 </#macro>
 
 <div id="addItemPage">
-    <form name="item" action="${model['action']}" method="post" enctype="multipart/form-data">
+    <form name="goods" action="add" method="post" enctype="multipart/form-data">
         <div id="flexWrap">
         <#--TODO group add-on-->
         <@formfield "name"  "text" "require"></@formfield>
@@ -35,14 +35,14 @@
         <@formfield "weight" "number"></@formfield>
         <@formfield "stockNumber" "number"></@formfield>
         <@formfield "preSaleNumber" "number"></@formfield>
-        <@formfield "shop"></@formfield>
-        <@formfield "introducedPrice" "number"></@formfield>
+        <@formfield "storeId"></@formfield>
+        <@formfield "midUserPrice" "number"></@formfield>
         <@formfield "marketPrice" "number"></@formfield>
-        <@formfield "bankPrice" "number"></@formfield>
-        <#--<@formfield "exchangeCredit" "number"></@formfield>-->
+        <@formfield "realPrice" "number"></@formfield>
+        <#--<@formfield "redeemPoint" "number"></@formfield>-->
             <div class="form-group">
-                <label for="categoryName">categoryName</label>
-                <input type="hidden" class="form-control" id="hiddenCategoryName" name="categoryName"/>
+                <label for="categoryId">categoryId</label>
+                <input type="hidden" class="form-control" id="hiddenCategoryName" name="categoryId"/>
                 <div class="dropdown" id="category">
                     <button class="btn btn-default form-control" id="categoryBtn" type="button"
                             data-toggle="dropdown">
@@ -65,10 +65,9 @@
                     </ul>
                 </div>
             </div>
-        <@formfield "brandName"></@formfield>
-        <@formfield "onMarketTime" "datetime-local"></@formfield>
-        <@formfield "outMarketTime" "datetime-local"></@formfield>
-        <#--<@formfield "addedTime"></@formfield>-->
+        <@formfield "brandId"></@formfield>
+        <#--<@formfield "standId" "number"></@formfield>-->
+        <#--<@formfield "addTime"></@formfield>-->
         <#--<@formfield "lastModifiedTime"></@formfield>-->
         <@formfield "description"></@formfield>
         <#--<@formfield "imagePath"></@formfield>-->
@@ -92,7 +91,7 @@
                     <label>
                         Dividable
                     </label>
-                    <input type="checkbox" class="checkbox" name="Dividable" checked/></div>
+                    <input type="checkbox" class="checkbox" name="dividable" checked/></div>
             </div>
 
         </div>

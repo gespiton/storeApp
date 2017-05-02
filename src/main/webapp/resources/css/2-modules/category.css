@@ -1,0 +1,35 @@
+.category-wrap {
+  display: flex;
+  flex-direction: row;
+  max-height: 210px; }
+  .category-wrap .thumbnail {
+    height: 200px;
+    width: 200px; }
+  .category-wrap .infowrap {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 20px;
+    flex-wrap: wrap;
+    flex-grow: 2; }
+    .category-wrap .infowrap label {
+      white-space: pre;
+      display: block; }
+      .category-wrap .infowrap label.media-heading {
+        font-size: 40px; }
+      .category-wrap .infowrap label.text-field {
+        display: table; }
+  .category-wrap p.text-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 10px;
+    flex-grow: 1;
+    margin: 0; }
+  .category-wrap .edit {
+    display: flex;
+    align-items: center; }
+    .category-wrap .edit button {
+      height: 100%; }
+
+/*# sourceMappingURL=category.css.map */
