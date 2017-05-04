@@ -1,7 +1,9 @@
 .viewItemPage
   margin: 0 auto
   width: 80%
-  ul li .wrap
+  .list-group li
+    display: block
+  .list-group li .wrap
     display: flex
     flex-direction: row
     max-height: 210px
@@ -30,8 +32,9 @@
       flex-grow: 1
       margin: 0
 
-    .edit
+    .action
       display: flex
       align-items: center
       button
         height: 100%
+

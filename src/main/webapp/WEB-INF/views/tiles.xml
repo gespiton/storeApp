@@ -24,8 +24,20 @@
     </definition>
 
     <definition name="category" template="/WEB-INF/views/layouts/defaultLayout.ftl" templateType="freemarker">
-        <put-attribute name="title" value="viewItems"/>
+        <put-attribute name="title" value="category"/>
         <put-attribute name="header" value="/WEB-INF/views/templates/header.ftl" type="freemarker"/>
         <put-attribute name="body" value="/WEB-INF/views/templates/category.ftl" type="freemarker"/>
+    </definition>
+
+    <definition name="saleInfo" template="/WEB-INF/views/layouts/defaultLayout.ftl" templateType="freemarker">
+        <put-attribute name="title" value="sale"/>
+        <put-attribute name="header" value="/WEB-INF/views/templates/header.ftl" type="freemarker"/>
+        <put-attribute name="body" value="/WEB-INF/views/templates/saleInfo.ftl" type="freemarker"/>
+    </definition>
+
+    <definition name="allSaleInfo" template="/WEB-INF/views/layouts/defaultLayout.ftl" templateType="freemarker">
+        <put-attribute name="title" value="sale"/>
+        <put-attribute name="header" value="/WEB-INF/views/templates/header.ftl" type="freemarker"/>
+        <put-attribute name="body" value="/WEB-INF/views/templates/allSaleInfo.ftl" type="freemarker"/>
     </definition>
 </tiles-definitions>

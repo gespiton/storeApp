@@ -16,7 +16,7 @@ import java.util.List;
  */
 @Service
 @Transactional(readOnly = true)
-public class ItemService {
+public class GoodsService {
 
 
     //    public Goods getItem(long id) {
@@ -39,6 +39,10 @@ public class ItemService {
 
     public Goods getItemBySerial(String serial) {
         return goodsMapper.getItemBySerial(serial);
+    }
+
+    public List<Goods> getGoodsByName(String name) {
+        return goodsMapper.getGoodsByName(name);
     }
 
     public List<Goods> getAll() {

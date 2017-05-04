@@ -45,6 +45,12 @@
         WHERE serialCode=#{serial}
     </select>
 
+    <select id="getGoodsByName" resultMap="ItemResultMap" parameterType="String">
+        SELECT *
+        FROM goods
+        WHERE name = #{name}
+    </select>
+
     <insert id="saveItem" parameterType="xmu.mystore.goodsmgt.hqchou.model.Goods">
        insert into goods (name,serialCode,weight,stockNumber,preSaleNumber,storeId,midUserPrice,marketPrice,realPrice,redeemPoint,categoryId,brandId,standId,addTime,lastModifiedTime,description,imagePath,isDividable,defaultExpress)
        VALUES (#{name},#{serialCode},#{weight},#{stockNumber},#{preSaleNumber},#{storeId},#{midUserPrice},#{marketPrice},#{realPrice},#{redeemPoint},#{categoryId},#{brandId},#{standId},#{addTime},#{lastModifiedTime},#{description},#{imagePath},#{isDividable},#{defaultExpress})
@@ -54,7 +60,6 @@
         update goods
         SET
         name = #{name},
-        serialCode = #{serialCode},
         weight = #{weight},
         stockNumber = #{stockNumber},
         preSaleNumber = #{preSaleNumber},

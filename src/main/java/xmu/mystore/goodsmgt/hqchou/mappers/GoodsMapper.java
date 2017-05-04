@@ -22,4 +22,6 @@ public interface GoodsMapper {
     boolean saveItem(Goods i);
 
     boolean updateItem(Goods goods);
+
+    List<Goods> getGoodsByName(String name);
 }

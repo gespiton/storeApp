@@ -23,7 +23,7 @@ public class Goods implements Serializable {
     private Integer redeemPoint;
     private Integer categoryId;
     private Integer brandId;
-    private Integer standId;
+    private Long standId;
     private String addTime;
     private String lastModifiedTime;
     private String description;
@@ -34,7 +34,7 @@ public class Goods implements Serializable {
     public Goods() {
     }
 
-    public Goods(String name, String serialCode, Double weight, Integer stockNumber, Integer preSaleNumber, Integer storeId, Double midUserPrice, Double marketPrice, Double realPrice, Integer redeemPoint, Integer categoryId, Integer brandId, Integer standId, String addTime, String lastModifiedTime, String description, String imagePath, Boolean isDividable, String defaultExpress) {
+    public Goods(String name, String serialCode, Double weight, Integer stockNumber, Integer preSaleNumber, Integer storeId, Double midUserPrice, Double marketPrice, Double realPrice, Integer redeemPoint, Integer categoryId, Integer brandId, Long standId, String addTime, String lastModifiedTime, String description, String imagePath, Boolean isDividable, String defaultExpress) {
         this.name = name;
         this.serialCode = serialCode;
         this.weight = weight;
@@ -161,11 +161,11 @@ public class Goods implements Serializable {
         this.brandId = brandId;
     }
 
-    public Integer getStandId() {
+    public Long getStandId() {
         return standId;
     }
 
-    public void setStandId(Integer standId) {
+    public void setStandId(Long standId) {
         this.standId = standId;
     }
 

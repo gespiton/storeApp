@@ -34,3 +34,22 @@ CREATE TABLE category (
   priority      int DEFAULT 0,
   FOREIGN KEY (upperCategoryId) REFERENCES category (id)
 );
+
+CREATE TABLE brand (
+  id          BIGINT PRIMARY KEY AUTO_INCREMENT,
+  name        VARCHAR(40) NOT NULL,
+  website     VARCHAR(40),
+  description VARCHAR(1000),
+  type        INT                DEFAULT 1
+);
+
+CREATE TABLE stand (
+  id            BIGINT PRIMARY KEY AUTO_INCREMENT,
+  goodsId       BIGINT REFERENCES goods (id),
+  midUserPrice  DOUBLE,
+  marketPrice   DOUBLE,
+  realPrice     DOUBLE,
+  onMarketTime  VARCHAR(20),
+  offMarketTime VARCHAR(20),
+  preSaleCount  LONG
+);

@@ -1,5 +1,4 @@
-$(document).ready(
-    function () {
+$(function () {
         if (!window.location.href.includes('Item')) {
             console.log('not this page');
             return;
@@ -13,9 +12,14 @@ $(document).ready(
         // initialize file input plugin
         // $("#input-id").fileinput();
         // viewItem
-        $('.editBtn').on('click', function () {
-            var cur = window.location.href;
+        $('button.editBtn').on('click', function () {
+            let cur = window.location.href;
             cur = cur.substr(0, cur.lastIndexOf('/')) + '/editItem/' + $(this).attr('id');
+            window.location.href = cur;
+        });
+        $('button.saleBtn').on('click', function () {
+            let cur = window.location.href;
+            cur = cur.substr(0, cur.lastIndexOf('/')) + '/saleInfo/' + $(this).attr('id');
             window.location.href = cur;
         });
 

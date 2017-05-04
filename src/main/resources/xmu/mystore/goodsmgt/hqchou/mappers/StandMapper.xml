@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="xmu.mystore.goodsmgt.hqchou.mappers.StandMapper">
+    <resultMap id="standResultMap" type="xmu.mystore.goodsmgt.hqchou.model.Stand">
+        <id column="id" property="id"/>
+        <result column="goodsID" property="goodsID"/>
+        <result column="midUserPrice" property="midUserPrice"/>
+        <result column="marketPrice" property="marketPrice"/>
+        <result column="realPrice" property="realPrice"/>
+        <result column="onMarketTime" property="onMarketTime"/>
+        <result column="offMarketTime" property="offMarketTime"/>
+        <result column="preSaleCount" property="preSaleCount"/>
+    </resultMap>
+
+    <select id="getStandByGoodsId" parameterType="long" resultMap="standResultMap">
+        SELECT *
+        FROM stand
+        WHERE goodsId = #{id}
+    </select>
+
+    <select id="getAllStands" resultMap="standResultMap">
+        SELECT *
+        FROM stand
+    </select>
+
+    <insert id="insertStand" parameterType="xmu.mystore.goodsmgt.hqchou.model.Stand">
+        INSERT INTO stand (goodsID,midUserPrice,marketPrice,realPrice,onMarketTime,offMarketTime,preSaleCount)
+        VALUES (#{goodsID},#{midUserPrice},#{marketPrice},#{realPrice},#{onMarketTime},#{offMarketTime},#{preSaleCount})
+    </insert>
+
+    <update id="updateStand" parameterType="xmu.mystore.goodsmgt.hqchou.model.Stand">
+        UPDATE stand
+        SET
+        midUserPrice = #{midUserPrice},
+        marketPrice = #{marketPrice},
+        realPrice = #{realPrice},
+        onMarketTime = #{onMarketTime},
+        offMarketTime = #{offMarketTime},
+        preSaleCount = #{preSaleCount}
+        WHERE
+        goodsID = #{goodsID}
+    </update>
+
+</mapper>

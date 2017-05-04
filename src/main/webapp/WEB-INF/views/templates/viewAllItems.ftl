@@ -20,9 +20,14 @@
         <label class="text-field">category: <b>${goods.categoryId}</b></label>
     </div>
     <p class="text-info">${goods.description}</p>
-    <div class="edit">
+    <div class="edit action">
         <button class="btn btn-default editBtn" id="${goods.serialCode}">
             <i class="glyphicon glyphicon-pencil moreBtn"></i>
+        </button>
+    </div>
+    <div class="sale action">
+        <button class="btn btn-default saleBtn" id="${goods.id}">
+            <i class="glyphicon glyphicon-list-alt"></i>
         </button>
     </div>
 </div>
@@ -30,11 +35,11 @@
 
 
 <div class="viewItemPage">
-    <ul class="list-group">
+    <div class="list-group">
     <#list model["itemList"] as Item>
         <li class="list-group-goods">
             <@itemModule Item></@itemModule>
         </li>
     </#list>
-    </ul>
+    </div>
 </div>

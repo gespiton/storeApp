@@ -36,7 +36,8 @@
             </div>
             <div class="form-group">
                 <label for="serialCode">serialCode</label>
-                <input type="text" required class="form-control" name="serialCode" value="${model['goods'].serialCode}"/>
+                <input type="text" required class="form-control" name="serialCode" disabled
+                       value="${model['goods'].serialCode}"/>
             </div>
             <div class="form-group">
                 <label for="weight">weight</label>
@@ -97,8 +98,11 @@
 
             <div class="form-group">
                 <label for="standId">standId</label>
-                <input class="form-control" name="standId"
-                       value="${model['goods'].standId}"/>
+                <input class="form-control" name="standId" disabled
+                <#if model['goods'].standId??>
+                       value="${model['goods'].standId}"
+                </#if>
+                />
             </div>
             <div class="form-group">
                 <label for="description">description</label>
@@ -133,7 +137,6 @@
                            checked
                     </#if>/></div>
             </div>
-
         </div>
         <button type="submit" class="btn btn-primary pull-right submitBtn" value="Save">update</button>
     </form>
