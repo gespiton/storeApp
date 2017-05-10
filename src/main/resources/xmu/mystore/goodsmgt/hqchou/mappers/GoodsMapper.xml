@@ -79,5 +79,31 @@
         defaultExpress = #{defaultExpress}
         where id = #{id}
     </update>
+    <select id="getGoodsBy" resultMap="ItemResultMap" parameterType="map">
+        SELECT
+            goods.id,
+            goods.name,
+            serialCode,
+            weight,
+            stockNumber,
+            stand.preSaleCount AS preSaleNumber,
+            storeId,
+            stand.midUserPrice,
+            stand.marketPrice,
+            stand.realPrice,
+            redeemPoint,
+            categoryId,
+            brandId,
+            standId
+        FROM goods, storeApp.category, stand
+        WHERE exists(SELECT goodsId
+             FROM stand
+             WHERE goodsId = goods.id)
+        AND goods.categoryId = category.id
+        AND categoryId REGEXP '${brandId}'
+        AND goods.brandId REGEXP '${categoryId}'
+        AND goods.standId = stand.id
+        LIMIT ${no},${size};
+    </select>
 
 </mapper>

@@ -184,7 +184,7 @@
                 <artifactId>tomcat7-maven-plugin</artifactId>
                 <version>2.2</version>
                 <configuration>
-                    <url>http://gespiton.cn/manager/text</url>
+                    <url>http://gespiton.cn:8080/manager/text</url>
                     <!--<username>admin</username>-->
                     <!--<password>freedom</password>-->
                     <update>true</update>

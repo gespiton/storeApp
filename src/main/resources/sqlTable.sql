@@ -30,8 +30,9 @@ CREATE TABLE category (
   id              BIGINT PRIMARY KEY       AUTO_INCREMENT,
   name            VARCHAR(40) UNIQUE NOT NULL,
   upperCategoryId BIGINT                   DEFAULT NULL,
-  rank            INT                      DEFAULT NULL,
-  priority      int DEFAULT 0,
+  rank            INT                      DEFAULT 1,
+  priority        INT                      DEFAULT 0,
+  type            INT                      DEFAULT 1,
   FOREIGN KEY (upperCategoryId) REFERENCES category (id)
 );
 

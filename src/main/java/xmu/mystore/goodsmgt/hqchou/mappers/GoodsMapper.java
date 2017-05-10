@@ -3,6 +3,7 @@ package xmu.mystore.goodsmgt.hqchou.mappers;
 import xmu.mystore.goodsmgt.hqchou.model.Goods;
 
 import java.util.List;
+import java.util.Map;
 
 //@Mapper
 public interface GoodsMapper {
@@ -24,4 +25,6 @@ public interface GoodsMapper {
     boolean updateItem(Goods goods);
 
     List<Goods> getGoodsByName(String name);
+
+    List<Goods> getGoodsBy(Map<String, String> map);
 }

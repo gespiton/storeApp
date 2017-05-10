@@ -1,11 +1,9 @@
 fields = '''
-    private Long goodsID;
-    private Double midUserPrice;
-    private Double marketPrice;
-    private Double realPrice;
-    private String onMarketTime;
-    private String offMarketTime;
-    private Long preSaleCount;
+    Long id;
+    String name;
+    String website;
+    String description;
+    Integer type;
     '''
 
 
@@ -33,6 +31,6 @@ def update():
     print ('\n'.join(li))
 
 
-# resultMap()
+resultMap()
 # insert()
-update()
+# update()

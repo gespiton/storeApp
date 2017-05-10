@@ -31,7 +31,7 @@ public class CategoryManaegController {
         if (categoryService.updateCategory(category))
             return "update success";
         else
-            return "update fail";
+            return "can't delete now, sorry";
     }
 }
 

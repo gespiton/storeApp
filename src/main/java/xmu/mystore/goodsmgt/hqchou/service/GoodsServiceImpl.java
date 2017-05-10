@@ -8,18 +8,21 @@ import xmu.mystore.goodsmgt.hqchou.model.Goods;
 import xmu.mystore.goodsmgt.hqchou.model.Stand;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by sher on 4/5/2017.
  */
 @Service
-public class GoodsMapperImpl implements IGoodsMapper {
+public class GoodsServiceImpl implements IGoodsService {
     @Autowired
     GoodsService goodsService;
     @Autowired
     CategoryService categoryService;
     @Autowired
     SaleService saleService;
+    @Autowired
+    BrandService brandService;
 
     @Override
     public Goods getGoodsByGoodsCode(String serialCode) {
@@ -32,8 +35,23 @@ public class GoodsMapperImpl implements IGoodsMapper {
     }
 
     @Override
-    public List<Goods> getGoodsBy(List<String> param) {
-        return goodsService.getAll();
+    public List<Goods> getGoodsBy(Map<String, String> param) {
+        int mode = 0;
+//        if (param.containsKey("no") && param.containsKey("size"))
+//            mode = 1;
+
+        String brandID_REGEX = ".*";
+        String categoryID_REGEX = ".*";
+
+        if (param.containsKey("brand_id")) {
+            brandID_REGEX = param.get("brand_id");
+        }
+
+        if (param.containsKey("category_id")) {
+            categoryID_REGEX = param.get("category_id");
+        }
+
+        return goodsService.getGoodsBy(param.get("no"), param.get("size"), brandID_REGEX, categoryID_REGEX);
     }
 
     @Override
@@ -43,7 +61,7 @@ public class GoodsMapperImpl implements IGoodsMapper {
 
     @Override
     public List<Brand> getBrandList() {
-        return Brand.getMockBrandList();
+        return brandService.getAllbrands();
     }
 
     @Override

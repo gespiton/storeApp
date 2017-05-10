@@ -8,7 +8,9 @@ import org.springframework.transaction.annotation.Transactional;
 import xmu.mystore.goodsmgt.hqchou.mappers.GoodsMapper;
 import xmu.mystore.goodsmgt.hqchou.model.Goods;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 
 /**
@@ -61,6 +63,19 @@ public class GoodsService {
         try (SqlSession session = sqlSessionFactory.openSession()) {
             GoodsMapper mapper = session.getMapper(GoodsMapper.class);
             return mapper.updateItem(goods);
+        }
+    }
+
+    public List<Goods> getGoodsBy(String no, String size, String brandID_regex, String categoryID_regex) {
+        try (SqlSession session = sqlSessionFactory.openSession()) {
+            GoodsMapper mapper = session.getMapper(GoodsMapper.class);
+            Map<String, String> map = new HashMap<>();
+            map.put("no", no);
+            map.put("size", size);
+            map.put("brandId", brandID_regex);
+            map.put("categoryId", categoryID_regex);
+
+            return mapper.getGoodsBy(map);
         }
     }
 }

@@ -6,16 +6,17 @@ import xmu.mystore.goodsmgt.hqchou.model.Goods;
 import xmu.mystore.goodsmgt.hqchou.model.Stand;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by sher on 4/5/2017.
  */
-public interface IGoodsMapper {
+public interface IGoodsService {
     Goods getGoodsByGoodsCode(String serialCode);
 
     List<Goods> getGoodsByGoodsName(String name);
 
-    List<Goods> getGoodsBy(List<String> param);
+    List<Goods> getGoodsBy(Map<String,String> param);
 
     List<Category> getCategoryList();
 
