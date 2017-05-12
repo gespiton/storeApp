@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC  "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<!--// author: 周鸿清-->
+
+<tiles-definitions>
+    <!-- Template Definition -->
+    <definition name="addItem" template="/WEB-INF/views/zhq/layouts/defaultLayout.ftl" templateType="freemarker">
+        <put-attribute name="title" value="addItem"/>
+        <put-attribute name="header" value="/WEB-INF/views/zhq/templates/header.ftl" type="freemarker"/>
+        <put-attribute name="body" value="/WEB-INF/views/zhq/templates/addItem.ftl" type="freemarker"/>
+    </definition>
+
+    <definition name="editItem" template="/WEB-INF/views/zhq/layouts/defaultLayout.ftl" templateType="freemarker">
+        <put-attribute name="title" value="editItem"/>
+        <put-attribute name="header" value="/WEB-INF/views/zhq/templates/header.ftl" type="freemarker"/>
+        <put-attribute name="body" value="/WEB-INF/views/zhq/templates/editItem.ftl" type="freemarker"/>
+    </definition>
+
+    <definition name="viewAllItems" template="/WEB-INF/views/zhq/layouts/defaultLayout.ftl" templateType="freemarker">
+        <put-attribute name="title" value="viewItems"/>
+        <put-attribute name="header" value="/WEB-INF/views/zhq/templates/header.ftl" type="freemarker"/>
+        <put-attribute name="body" value="/WEB-INF/views/zhq/templates/viewAllItems.ftl" type="freemarker"/>
+    </definition>
+
+    <definition name="category" template="/WEB-INF/views/zhq/layouts/defaultLayout.ftl" templateType="freemarker">
+        <put-attribute name="title" value="category"/>
+        <put-attribute name="header" value="/WEB-INF/views/zhq/templates/header.ftl" type="freemarker"/>
+        <put-attribute name="body" value="/WEB-INF/views/zhq/templates/category.ftl" type="freemarker"/>
+    </definition>
+
+    <definition name="saleInfo" template="/WEB-INF/views/zhq/layouts/defaultLayout.ftl" templateType="freemarker">
+        <put-attribute name="title" value="sale"/>
+        <put-attribute name="header" value="/WEB-INF/views/zhq/templates/header.ftl" type="freemarker"/>
+        <put-attribute name="body" value="/WEB-INF/views/zhq/templates/saleInfo.ftl" type="freemarker"/>
+    </definition>
+
+    <definition name="allSaleInfo" template="/WEB-INF/views/zhq/layouts/defaultLayout.ftl" templateType="freemarker">
+        <put-attribute name="title" value="sale"/>
+        <put-attribute name="header" value="/WEB-INF/views/zhq/templates/header.ftl" type="freemarker"/>
+        <put-attribute name="body" value="/WEB-INF/views/zhq/templates/allSaleInfo.ftl" type="freemarker"/>
+    </definition>
+</tiles-definitions>

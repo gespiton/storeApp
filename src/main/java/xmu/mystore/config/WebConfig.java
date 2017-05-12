@@ -13,7 +13,6 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
-import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.web.multipart.MultipartResolver;
 import org.springframework.web.multipart.support.StandardServletMultipartResolver;
 import org.springframework.web.servlet.config.annotation.*;
@@ -22,7 +21,6 @@ import org.springframework.web.servlet.view.tiles3.TilesViewResolver;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.List;
 
 /**
  * Created by 周鸿清 on 8/3/2017.
@@ -46,7 +44,7 @@ public class WebConfig extends WebMvcConfigurerAdapter {
     @Bean
     public TilesConfigurer tilesConfigurer() {
         TilesConfigurer tilesConfigurer = new TilesConfigurer();
-        tilesConfigurer.setDefinitions("/WEB-INF/views/tiles.xml");
+        tilesConfigurer.setDefinitions("/WEB-INF/views/zhq/tiles.xml");
         tilesConfigurer.setCheckRefresh(true);
         tilesConfigurer.setTilesInitializer(new CompleteAutoloadTilesInitializer() {
             @Override

@@ -31,5 +31,5 @@
     <@saleInfo info></@saleInfo>
 </#list>
 </div>
-<script src="/mystore/resources/js/allSaleInfo.js" type="text/javascript"></script>
+<script src="/mystore/resources/js/zhq//allSaleInfo.js" type="text/javascript"></script>
 
