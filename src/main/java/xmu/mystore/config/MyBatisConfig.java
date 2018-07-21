@@ -40,7 +40,7 @@ public class MyBatisConfig implements EnvironmentAware {
         dataSource.setDriverClassName(env.getRequiredProperty("db.driver"));
         dataSource.setUrl(env.getRequiredProperty("db.url"));
         dataSource.setUsername("root");
-        dataSource.setPassword("freedom");
+        dataSource.setPassword("");
         return dataSource;
     }
 
